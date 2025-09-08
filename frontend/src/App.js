@@ -930,7 +930,7 @@ const App = () => {
 
                   <div className="text-center mb-6">
                     <div className="text-2xl font-bold text-green-400">
-                      Current Highest Bid: ${auctionRoom.current_highest_bid || 0}
+                      Current Highest Bid: ₹{((auctionRoom.current_highest_bid || 0) / 10000000).toFixed(2)} Cr
                     </div>
                     {auctionRoom.current_highest_bidder && (
                       <p className="text-orange-200">by Bidder: {auctionRoom.current_highest_bidder}</p>
@@ -942,9 +942,10 @@ const App = () => {
                       type="number"
                       value={bidAmount}
                       onChange={(e) => setBidAmount(e.target.value)}
-                      placeholder="Enter bid amount"
+                      placeholder="Enter bid (in crores)"
                       className="flex-1 p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      min={auctionRoom.current_highest_bid + 1}
+                      min={(auctionRoom.current_highest_bid / 10000000) + 0.01}
+                      step="0.01"
                     />
                     <button
                       type="submit"
