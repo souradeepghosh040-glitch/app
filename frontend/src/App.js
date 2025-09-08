@@ -614,19 +614,18 @@ const App = () => {
               </div>
 
               <form onSubmit={createProfile} className="space-y-6">
-                <div>
-                  <label className="block text-blue-200 mb-2">Budget ($)</label>
-                  <input
-                    type="number"
-                    value={budget}
-                    onChange={(e) => setBudget(e.target.value)}
-                    className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
+                <div className="bg-green-600/20 border border-green-500/30 rounded-lg p-4 mb-6">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-2xl">💰</span>
+                    <div>
+                      <h3 className="text-green-400 font-semibold text-lg">Your Auction Budget</h3>
+                      <p className="text-green-200">₹120 Crores (Fixed for all buyers)</p>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
-                  <label className="block text-blue-200 mb-4">Preferred Player Types</label>
+                  <label className="block text-blue-200 mb-4">Select Your Preferred Player Types</label>
                   <div className="grid grid-cols-2 gap-4">
                     {['batsman', 'bowler', 'all-rounder', 'wicket-keeper'].map(type => (
                       <label key={type} className="flex items-center space-x-3 text-white">
