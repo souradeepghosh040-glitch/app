@@ -244,6 +244,11 @@ async def get_player_recommendations(buyer_profile: BuyerProfile, available_play
     sorted_players = sorted(filtered_players, key=lambda x: x.performance_score, reverse=True)
     return [p.id for p in sorted_players[:5]]
 
+# Root endpoint
+@api_router.get("/")
+async def root():
+    return {"message": "SportsBid API - Live Cricket Auction Platform"}
+
 # Auth endpoints
 @api_router.post("/auth/register", response_model=User)
 async def register_user(user_data: UserCreate):
