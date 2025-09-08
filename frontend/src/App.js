@@ -869,7 +869,7 @@ const App = () => {
               </div>
               <div className="text-right">
                 <div className="text-green-400 font-bold text-xl">
-                  ${buyerProfile?.remaining_budget || 0}
+                  ₹{((buyerProfile?.remaining_budget || 0) / 10000000).toFixed(2)} Cr
                 </div>
                 <p className="text-orange-200 text-sm">Remaining Budget</p>
               </div>
