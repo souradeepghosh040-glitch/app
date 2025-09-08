@@ -530,7 +530,6 @@ const App = () => {
     const [profile, setProfile] = useState(null);
     const [recommendations, setRecommendations] = useState([]);
     const [roomCode, setRoomCode] = useState('');
-    const [budget, setBudget] = useState('');
     const [preferences, setPreferences] = useState([]);
 
     useEffect(() => {
