@@ -675,12 +675,12 @@ const App = () => {
                 <h3 className="text-2xl font-semibold text-white mb-6">Your Profile</h3>
                 <div className="bg-white/5 p-6 rounded-lg border border-white/10 space-y-4">
                   <div className="flex justify-between">
-                    <span className="text-blue-200">Budget:</span>
-                    <span className="text-green-400 font-semibold">${profile.budget}</span>
+                    <span className="text-blue-200">Total Budget:</span>
+                    <span className="text-green-400 font-semibold">₹{(profile.budget / 10000000).toFixed(0)} Cr</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-blue-200">Remaining:</span>
-                    <span className="text-green-400 font-semibold">${profile.remaining_budget}</span>
+                    <span className="text-green-400 font-semibold">₹{(profile.remaining_budget / 10000000).toFixed(2)} Cr</span>
                   </div>
                   <div>
                     <span className="text-blue-200">Preferences:</span>
