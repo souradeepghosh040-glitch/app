@@ -839,7 +839,9 @@ const App = () => {
 
     const placeBid = async (e) => {
       e.preventDefault();
-      if (!bidAmount || parseFloat(bidAmount) <= auctionRoom.current_highest_bid) {
+      const bidAmountInRupees = parseFloat(bidAmount) * 10000000; // Convert crores to rupees
+      
+      if (!bidAmount || bidAmountInRupees <= auctionRoom.current_highest_bid) {
         alert('Bid must be higher than current highest bid');
         return;
       }
@@ -848,7 +850,7 @@ const App = () => {
         await axios.post(`${API}/bids?bidder_id=${user.id}`, {
           room_id: auctionRoom.id,
           player_id: players[auctionRoom.current_player_index]?.id,
-          amount: parseFloat(bidAmount)
+          amount: bidAmountInRupees
         });
         setBidAmount('');
       } catch (error) {
