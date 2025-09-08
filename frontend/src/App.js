@@ -562,7 +562,7 @@ const App = () => {
         const response = await axios.post(
           `${API}/buyer-profile?user_id=${user.id}`,
           {
-            budget: parseFloat(budget),
+            budget: 12000000000, // 120 crores in rupees (120 * 10^7)
             preferred_players: preferences
           }
         );
