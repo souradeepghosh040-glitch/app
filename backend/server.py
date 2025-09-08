@@ -247,7 +247,7 @@ async def get_player_recommendations(buyer_profile: BuyerProfile, available_play
 # Root endpoint
 @api_router.get("/")
 async def root():
-    return {"message": "SportsBid API - Live Cricket Auction Platform"}
+    return {"message": "Auction Pro API - Live Cricket Auction Platform"}
 
 # Auth endpoints
 @api_router.post("/auth/register", response_model=User)
